@@ -1,0 +1,68 @@
+Calculator Object
+	Properties
+		Result
+
+	Methods
+		addition -> Calls addition static method from math operations
+		subtraction -> Calls subtraction static method from math operations
+		multiplication -> Calls multiplication static method from math operations
+		division -> Calls division static method from math operations
+		exponentiation -> Calls exponentiation static method from math operations
+		nthRoot -> Calls nthroot static method from math operations
+		logarithm -> Calls logarithm static method from math operations
+
+	Math Operations Static Class
+		Methods
+			addition -> Calls addition class method of sum
+			subtraction -> Calls subtraction class method of difference
+			multiplication -> Calls multiplication class method of product
+			division -> Calls division class method of quotient
+			exponentiation -> Calls exponentiation class method of power
+			nthRoot -> Calls nthroot class method of root
+			logarithm -> Calls logarithm class method of logarithm
+
+	Operations classes
+		Addition
+			Methods
+				sum
+					Description: Sums two numbers OR sum a list of numbers
+					Formula: x + y
+					Formula: sum(x)
+					Example: 2, 3 => 5
+					Example: [2, 3, 5] => 11
+		Subtraction
+			Methods
+				difference
+					Description: Subtracts two numbers
+					Formula: x - y
+					Example: 6 - 3 => 3
+		Multiplication
+			Methods
+				product
+					Description: Multiply two numbers
+					Formula: x * y
+					Example: 3 * 4 => 12
+		Division
+			Methods
+				quotient
+					Description: Divide two numbers
+					Formula: x / y
+					Example: 7 / 2 => 3.5
+		Exponentiation
+			Methods
+				power
+					Description: Raise one number to the power of the second
+					Formula: x ** y
+					Example: 3 ** 3 => 27
+		NthRoot
+			Methods
+				root
+					Description: Take the root of the first number with power of the second
+					Formula: x ** (1 / y)
+					Example: 16 ** (1 / 4) => 4
+		Logarithm
+			Methods
+				logarithm
+					Description: Take the logarithm of one number by the base of the second
+					Formula: log(x) / log(y)
+					Example: log(8) / log(2) => 3

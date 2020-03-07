@@ -1,0 +1,28 @@
+RandomGenerator Object
+	Properties
+		None
+
+	Methods
+		range
+			Description: Generates a random number between two numbers, integer or decimal
+			Formula: given x and y, return a random number between x (inclusive) and y (exclusive)
+			Example: x = 4, y = 10 => 7
+			Example: x = 4.6, y = 10.0 => 5.3937
+		rangeSeeded
+			Description: Generates a random number between two numbers, integer or decimal, given a seed
+			Example: seed = 17, x = 2, y = 10.4 => 7.527235
+		rangeListSeeded
+			Description: Generates a list of n random numbers between two numbers, integer or decimal, given a seed
+			Example: seed = 124, n = 4, x = 0, y = 1.0 => [0.42132, 0.14532, 0.65452, 0.88189]
+		choose
+			Description: Choose a random item from a list
+			Example: [1, 4, 12, "abc"] => 12
+		choseSeeded
+			Description: Choose a random item from a list, given a seed
+			Example: seed = 125, [1, 4, 12, "abc"] => "abc"
+		chooseN
+			Description: Choose n random item from a list
+			Example: n = 2, [1, 4, 12, "abc"] => "abc", 12
+		chooseNSeeded
+			Description: Choose n random item from a list
+			Example: n = 2, [1, 4, 12, "abc"] => "abc", 12
