@@ -29,7 +29,7 @@ Calculator Object
 					Formula: x + y
 					Formula: sum(x)
 					Example: 2, 3 => 5
-					Example: [2, 3, 5] => 11
+					Example: [2, 3, 6] => 11
 		Subtraction
 			Methods
 				difference
