@@ -3,5 +3,5 @@ class Exponentiation:
 		pass
 
 	@staticmethod
-	def power(base, power):
-		return base ** power
+	def power(base, exponent):
+		return base ** exponent

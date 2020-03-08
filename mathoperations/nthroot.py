@@ -3,5 +3,5 @@ class NthRoot:
 		pass
 
 	@staticmethod
-	def root(base, power):
-		return base ** (1 / power)
+	def root(radicand, degree):
+		return radicand ** (1 / degree)
