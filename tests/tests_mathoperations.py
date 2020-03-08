@@ -6,6 +6,7 @@ from mathoperations.multiplication import Multiplication
 from mathoperations.division import Division
 from mathoperations.exponentiation import Exponentiation
 from mathoperations.nthroot import NthRoot
+from mathoperations.logarithm import Logarithm
 
 
 class TestCases(unittest.TestCase):
@@ -32,3 +33,6 @@ class TestCases(unittest.TestCase):
 
 	def test_root(self):
 		self.assertEqual(4, NthRoot.root(16, 2))
+
+	def test_logarithm(self):
+		self.assertEqual(3, Logarithm.logarithm(8, 2))
