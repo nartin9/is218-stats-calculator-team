@@ -59,7 +59,7 @@ Calculator Object
 				root
 					Description: Take the root of the first number with power of the second
 					Formula: x ** (1 / y)
-					Example: 16 ** (1 / 4) => 4
+					Example: 16 ** (1 / 2) => 4
 		Logarithm
 			Methods
 				logarithm
