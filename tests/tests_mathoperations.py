@@ -4,7 +4,7 @@ from mathoperations.addition import Addition
 from mathoperations.subtraction import Subtraction
 from mathoperations.multiplication import Multiplication
 from mathoperations.division import Division
-
+from mathoperations.exponentiation import Exponentiation
 
 
 class TestCases(unittest.TestCase):
@@ -25,3 +25,6 @@ class TestCases(unittest.TestCase):
 
 	def test_quotient(self):
 		self.assertEqual(3.5, Division.quotient(7, 2))
+		
+	def test_power(self):
+		self.assertEqual(27, Exponentiation.power(3, 3))
