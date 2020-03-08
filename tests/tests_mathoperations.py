@@ -2,6 +2,7 @@ import unittest
 
 from mathoperations.addition import Addition
 from mathoperations.subtraction import Subtraction
+from mathoperations.division import Division
 
 
 class TestCases(unittest.TestCase):
@@ -16,3 +17,6 @@ class TestCases(unittest.TestCase):
 
 	def test_difference(self):
 		self.assertEqual(3, Subtraction.difference(6, 3))
+
+	def test_quotient(self):
+		self.assertEqual(3.5, Division.quotient(7, 2))
