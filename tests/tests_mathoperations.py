@@ -5,6 +5,7 @@ from mathoperations.subtraction import Subtraction
 from mathoperations.multiplication import Multiplication
 from mathoperations.division import Division
 from mathoperations.exponentiation import Exponentiation
+from mathoperations.nthroot import NthRoot
 
 
 class TestCases(unittest.TestCase):
@@ -28,3 +29,6 @@ class TestCases(unittest.TestCase):
 		
 	def test_power(self):
 		self.assertEqual(27, Exponentiation.power(3, 3))
+
+	def test_root(self):
+		self.assertEqual(4, NthRoot.root(16, 2))
