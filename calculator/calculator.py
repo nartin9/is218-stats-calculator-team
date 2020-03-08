@@ -11,7 +11,7 @@ class Calculator:
 	def __init__(self):
 		self.result = None
 
-	def addition(self, x, y):
+	def addition(self, x, y=None):
 		self.result = Addition.sum(x, y)
 		return self.result
 		
