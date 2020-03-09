@@ -9,7 +9,7 @@ class TestCases(unittest.TestCase):
 
 	def test_instantiation(self):
 		self.assertIsInstance(self.calculator, Calculator)
-		
+
 	def test_addition(self):
 		self.assertEqual(5, self.calculator.addition(2, 3))
 
@@ -24,7 +24,7 @@ class TestCases(unittest.TestCase):
 
 	def test_division(self):
 		self.assertEqual(3.5, self.calculator.division(7, 2))
-		
+
 	def test_exponentiation(self):
 		self.assertEqual(27, self.calculator.exponentiation(3, 3))
 
