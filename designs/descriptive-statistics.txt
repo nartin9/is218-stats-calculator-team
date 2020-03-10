@@ -1,0 +1,52 @@
+DescriptiveStatistics Object
+	Properties
+		None
+
+	Static Methods
+		mean
+			Description: returns the mean of a list of numbers
+			Formula: sum and divide by number count
+			Example: [3, 2, 6, 1, 8] => 4
+		median
+			Description: returns the middle value (after sorting) in the list
+			Formula: sort, pick middle value
+			Example: [3, 2, 6, 1, 8] => 3
+			Example: [3, 2, 6, 1, 8, 4] => 3.5
+		mode
+			Description: returns the values occurring most often
+			Formula: count occurrences of values and return highest occurrences
+			Example: [1, 7, 4, 7, 2, 8] => 7
+		variance
+			Description: expectation of the squared standard deviation
+			Formula: E((X-u)^2)
+			Example: [22, 56, 12, 32, 65, 15] => 487.466666
+		stdev
+			Description: measures the amount of deviation using standard deviation
+			Formula: sqrt(sum(x_i - u)^2 / N)
+			Example: [22, 56, 12, 32, 65, 15] => 22.078647
+		quartiles
+			Description: divides the list of numbers into quarters and returns the quartiles
+			Formula: Take the median as 2nd quartile, split the list by the median and take the median in each slice as the 1st and 3rd quartile respectively
+			Example: [1, 2, 2, 5, 8, 9, 12] => [2, 5, 9]
+			Example: [1, 2, 2, 5, 8, 9, 12, 15] => [2, 6.5, 10.5]
+		skewness
+			Description: returns the measurement of asymmetry of probability distribution
+			Formula: (mean - mode) / stdev
+			Example: [22, 56, 12, 32, 65, 15] => 1.670391
+		sampleCorrelation
+			Description: determines the correlation between two random variables
+			Formula: covariance(X, Y) / (stdev(X) * stdev(Y))
+			Example: [14.2, 16.4, 11.9, 15.2, 18.5], [215, 325, 185, 332, 406] => 0.945328
+		populationCorrelation
+			???
+			Description: determines the correlation between two random variables
+			Formula: covariance(X, Y) / (stdev(X) * stdev(Y))
+			Example: [14.2, 16.4, 11.9, 15.2, 18.5], [215, 325, 185, 332, 406] => 0.9453
+		zscore
+			Description: returns how far a number is in standard deviations from the mean
+			Formula: (value - mean) / stdev
+			Example: value = 1100, mean = 1026, stdev = 209 => 0.354066
+		meanDeviation
+			Description: returns how far on average all values are from the middle
+			Formula: find mean, get absolute difference of each value from the mean, find the mean of the differences
+			Example: [3, 2, 6, 1, 8] => 4, [1, 2, 2, 3, 4] => 2.4
