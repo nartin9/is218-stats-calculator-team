@@ -1,0 +1,6 @@
+import unittest
+
+from randomgenerator.randomgenerator import RandomGenerator
+
+
+class TestCases(unittest.TestCase):
