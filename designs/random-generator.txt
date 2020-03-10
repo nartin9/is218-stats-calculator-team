@@ -2,7 +2,7 @@ RandomGenerator Object
 	Properties
 		None
 
-	Methods
+	Static Methods
 		range
 			Description: Generates a random number between two numbers, integer or decimal
 			Formula: given x and y, return a random number between x (inclusive) and y (exclusive)
