@@ -31,10 +31,13 @@ def chooseN(elements, n);
     values = []
     for x in range(n):
         values.append(random.choice(elements))
+    return values
 
-//elements: a list      n: number of elements       s: the seed
+#elements: a list      n: number of elements       s: the seed
 def ChooseNSeeded(elements, n, s)
     random.seed(s)
     values = []
     for x in range(n):
-        values.append(random.choice(elements))
+	values.append(random.choice(elements))
+    return values
+	
