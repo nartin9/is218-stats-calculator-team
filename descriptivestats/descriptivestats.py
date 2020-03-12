@@ -69,6 +69,10 @@ class DescriptiveStatistics:
 	def skewness(data):
 		return 3 * (DescriptiveStatistics.mean(data) - DescriptiveStatistics.median(data)) / DescriptiveStatistics.stdev(data)
 
+	@staticmethod
+	def zscore(value, mean, stdev):
+		return (value - mean) / stdev
+
 	"""assumes data is already sorted"""
 	@staticmethod
 	def _median(data):
