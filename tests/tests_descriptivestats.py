@@ -52,3 +52,7 @@ class TestCases(unittest.TestCase):
 		mean = 1026
 		stdev = 209
 		self.assertAlmostEqual(0.35406698, DescriptiveStatistics.zscore(value, mean, stdev))
+
+	def test_meanDeviation(self):
+		data = [3, 2, 6, 1, 8]
+		self.assertEqual(2.4, DescriptiveStatistics.meanDeviation(data))

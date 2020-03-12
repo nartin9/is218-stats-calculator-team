@@ -73,6 +73,16 @@ class DescriptiveStatistics:
 	def zscore(value, mean, stdev):
 		return (value - mean) / stdev
 
+	@staticmethod
+	def meanDeviation(data):
+		mean = DescriptiveStatistics.mean(data)
+		absdiff = []
+
+		for d in data:
+			absdiff.append(abs(d - mean))
+
+		return DescriptiveStatistics.mean(absdiff)
+
 	"""assumes data is already sorted"""
 	@staticmethod
 	def _median(data):
