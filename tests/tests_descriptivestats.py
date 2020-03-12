@@ -46,3 +46,9 @@ class TestCases(unittest.TestCase):
 	def test_skewness(self):
 		data = [22, 56, 12, 32, 65, 15]
 		self.assertAlmostEqual(0.90585259, DescriptiveStatistics.skewness(data))
+
+	def test_zscore(self):
+		value = 1100
+		mean = 1026
+		stdev = 209
+		self.assertAlmostEqual(0.35406698, DescriptiveStatistics.zscore(value, mean, stdev))
