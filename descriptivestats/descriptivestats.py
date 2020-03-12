@@ -7,10 +7,16 @@ class DescriptiveStatistics:
 
 	@staticmethod
 	def mean(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		return sum(data) / len(data)
 
 	@staticmethod
 	def median(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		sortedData = data[:]
 		sortedData.sort()
 
@@ -18,6 +24,9 @@ class DescriptiveStatistics:
 
 	@staticmethod
 	def mode(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		count = {}
 		maxCount = 0
 
@@ -28,6 +37,9 @@ class DescriptiveStatistics:
 
 			if count[d] > maxCount:
 				maxCount = count[d]
+
+		if maxCount == 1:
+			return []
 
 		largest = []
 
@@ -41,6 +53,11 @@ class DescriptiveStatistics:
 	"""sample standard deviation"""
 	@staticmethod
 	def stdev(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+		if len(data) - 1 == 0:
+			raise ZeroDivisionError()
+
 		mean = DescriptiveStatistics.mean(data)
 		total = 0
 
@@ -52,6 +69,9 @@ class DescriptiveStatistics:
 	"""population standard deviation"""
 	@staticmethod
 	def pstdev(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		mean = DescriptiveStatistics.mean(data)
 		total = 0
 
@@ -63,11 +83,19 @@ class DescriptiveStatistics:
 	"""sample variance"""
 	@staticmethod
 	def variance(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		return DescriptiveStatistics.stdev(data) ** 2
 
 	"""sample covariance"""
 	@staticmethod
 	def covariance(data1, data2):
+		if len(data1) == 0 or len(data2) == 0:
+			raise Exception("list is empty")
+		if len(data1) - 1 == 0:
+			raise ZeroDivisionError()
+
 		mean1 = DescriptiveStatistics.mean(data1)
 		mean2 = DescriptiveStatistics.mean(data2)
 
@@ -80,6 +108,9 @@ class DescriptiveStatistics:
 	"""population covariance"""
 	@staticmethod
 	def pcovariance(data1, data2):
+		if len(data1) == 0:
+			raise Exception("list is empty")
+
 		mean1 = DescriptiveStatistics.mean(data1)
 		mean2 = DescriptiveStatistics.mean(data2)
 
@@ -91,6 +122,9 @@ class DescriptiveStatistics:
 
 	@staticmethod
 	def quartiles(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		sortedData = data[:]
 		sortedData.sort()
 
@@ -102,14 +136,23 @@ class DescriptiveStatistics:
 
 	@staticmethod
 	def skewness(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		return 3 * (DescriptiveStatistics.mean(data) - DescriptiveStatistics.median(data)) / DescriptiveStatistics.stdev(data)
 
 	@staticmethod
 	def zscore(value, mean, stdev):
+		if stdev == 0:
+			raise ZeroDivisionError()
+
 		return (value - mean) / stdev
 
 	@staticmethod
 	def meanDeviation(data):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		mean = DescriptiveStatistics.mean(data)
 		absdiff = []
 
