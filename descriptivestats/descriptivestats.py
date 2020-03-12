@@ -11,12 +11,7 @@ class DescriptiveStatistics:
 		sortedData = data[:]
 		sortedData.sort()
 
-		mid = len(sortedData) // 2
-
-		if len(sortedData) & 1 == 1:
-			return sortedData[mid]
-
-		return (sortedData[mid - 1] + sortedData[mid]) / 2
+		return DescriptiveStatistics._median(sortedData)["median"]
 
 	@staticmethod
 	def mode(data):
@@ -39,3 +34,34 @@ class DescriptiveStatistics:
 
 		largest.sort()
 		return largest
+
+	@staticmethod
+	def quartiles(data):
+		sortedData = data[:]
+		sortedData.sort()
+
+		quar2 = DescriptiveStatistics._median(sortedData)
+		quar1 = DescriptiveStatistics._median(sortedData[:quar2["end1idx"] + 1])
+		quar3 = DescriptiveStatistics._median(sortedData[quar2["start2idx"]:])
+
+		return [quar1["median"], quar2["median"], quar3["median"]]
+
+	"""assumes data is already sorted"""
+	@staticmethod
+	def _median(data):
+		mid = len(data) // 2
+
+		end1idx = mid - 1
+
+		if len(data) & 1 == 1:
+			median = data[mid]
+			start2idx = mid + 1
+		else:
+			median = (data[mid - 1] + data[mid]) / 2
+			start2idx = mid
+
+		return {
+			"median": median,
+			"end1idx": end1idx,
+			"start2idx": start2idx
+		}
