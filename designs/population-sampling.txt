@@ -1,0 +1,27 @@
+PopulationSampling Object
+	Properties
+		None
+
+	Static Methods
+		simpleRandomSampling
+			Description: choose random samples from data without replacement
+			Example: [1, 4, 7, 2, 7, 3, 8, 5] => [2, 8, 7]
+		systematicRandomSampling
+			Description: choose a random element and pick every kth element
+			Example: [1, 4, 7, 2, 7, 3, 8, 5] => [7, 8, 1]
+		confidenceInterval
+			Description: finds a range of values in an interval
+			Formula: mean plus/minus z-value * stdev / sqrt(n)
+			Example: mean = 175, confidence-interval = 0.95, stdev = 20, n = 40 => 175 p/m 6.2
+		marginOfError
+			Description: finds margin of error
+			Formula: z-score * standard error
+			Example: n = 900, stdev = 0.4, confidence-interval = 0.95 => 0.02193138
+		cochranSampleSize
+			Description: calculate an ideal sample size from a level of precision, confidence level, and estimated proportion of the attribute present in the population
+			Formula: z-score ** 2 * p * (1 - p) / e ** 2
+			Example: confidence-level = 0.95, p = 0.5, e = 0.05 => 385
+		findSampleSize
+			Description: find a sample size given a confidence interval and width
+			Formula: (z-score * stdev / e) ** 2
+			Example: confidence-level = 0.99, stdev = 2.9, e = 0.5 => 224
