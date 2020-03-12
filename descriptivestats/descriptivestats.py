@@ -49,6 +49,8 @@ class DescriptiveStatistics:
 
 		return math.sqrt(total / (len(data) - 1))
 
+	"""sample variance"""
+	@staticmethod
 	def variance(data):
 		return DescriptiveStatistics.stdev(data) ** 2
 
