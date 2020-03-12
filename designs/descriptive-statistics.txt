@@ -31,8 +31,8 @@ DescriptiveStatistics Object
 			Example: [1, 2, 2, 5, 8, 9, 12, 15] => [2, 6.5, 10.5]
 		skewness
 			Description: returns the measurement of asymmetry of probability distribution
-			Formula: (mean - mode) / stdev
-			Example: [22, 56, 12, 32, 65, 15] => 1.670391
+			Formula: 3 * (mean - median) / stdev
+			Example: [22, 56, 12, 32, 65, 15] => 0.905852
 		sampleCorrelation
 			Description: determines the correlation between two random variables
 			Formula: covariance(X, Y) / (stdev(X) * stdev(Y))

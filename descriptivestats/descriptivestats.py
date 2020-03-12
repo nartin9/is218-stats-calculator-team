@@ -65,6 +65,10 @@ class DescriptiveStatistics:
 
 		return [quar1["median"], quar2["median"], quar3["median"]]
 
+	@staticmethod
+	def skewness(data):
+		return 3 * (DescriptiveStatistics.mean(data) - DescriptiveStatistics.median(data)) / DescriptiveStatistics.stdev(data)
+
 	"""assumes data is already sorted"""
 	@staticmethod
 	def _median(data):
