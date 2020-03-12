@@ -3,6 +3,8 @@ import random
 
 import scipy.stats
 
+from descriptivestats.descriptivestats import DescriptiveStatistics
+
 
 class PopulationSampling:
 	def __init__(self):
@@ -10,6 +12,9 @@ class PopulationSampling:
 
 	@staticmethod
 	def simpleRandomSampling(data, n):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
 		sample = []
 
 		for i in range(n):
@@ -23,6 +28,11 @@ class PopulationSampling:
 
 	@staticmethod
 	def systematicSampling(data, n):
+		if len(data) == 0:
+			raise Exception("list is empty")
+		if n == 0:
+			raise ZeroDivisionError()
+
 		sample = []
 		k = len(data) // n
 
@@ -37,16 +47,39 @@ class PopulationSampling:
 		return sample
 
 	@staticmethod
+	def confidenceInterval(data, confidence):
+		if len(data) == 0:
+			raise Exception("list is empty")
+
+		mean = DescriptiveStatistics.mean(data)
+		se = scipy.stats.sem(data)
+		i = se * PopulationSampling.tscore(len(data), confidence)
+		return [mean, mean - i, mean + i]
+
+	@staticmethod
 	def marginOfError(pstdev, n, confidenceLevel):
+		if n == 0:
+			raise ZeroDivisionError()
+
 		zscore = scipy.stats.norm.ppf(confidenceLevel)
 		return zscore * pstdev / math.sqrt(n)
 
 	@staticmethod
 	def cochranSampleSize(p, confidenceLevel, precision):
+		if precision == 0:
+			raise ZeroDivisionError()
+
 		zscore = scipy.stats.norm.ppf(confidenceLevel + (1 - confidenceLevel) / 2)
 		return math.ceil((zscore ** 2) * p * (1 - p) / (precision ** 2))
 
 	@staticmethod
 	def findSampleSize(stdev, confidenceLevel, precision):
+		if precision == 0:
+			raise ZeroDivisionError()
+
 		zscore = scipy.stats.norm.ppf(confidenceLevel + (1 - confidenceLevel) / 2)
 		return math.ceil((zscore * stdev / precision) ** 2)
+
+	@staticmethod
+	def tscore(n, confidence):
+		return scipy.stats.t.ppf(confidence, n - 1)
