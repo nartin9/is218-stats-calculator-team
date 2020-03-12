@@ -14,7 +14,7 @@ def rangeIntSeeded(x, y, z);
     random.seed(z)
     return random.randint(x, y)
 
-def rangeIntSeeded(x, y, z);
+def rangeDecSeeded(x, y, z);
     random.seed(z)
     return random.uniform(x, y)
 
