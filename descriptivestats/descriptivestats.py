@@ -1,3 +1,6 @@
+import math
+
+
 class DescriptiveStatistics:
 	def __init__(self):
 		pass
@@ -34,6 +37,22 @@ class DescriptiveStatistics:
 
 		largest.sort()
 		return largest
+
+	"""sample standard deviation"""
+	@staticmethod
+	def stdev(data):
+		mean = DescriptiveStatistics.mean(data)
+		total = 0
+
+		for d in data:
+			total += (d - mean) ** 2
+
+		return math.sqrt(total / (len(data) - 1))
+
+	"""sample variance"""
+	@staticmethod
+	def variance(data):
+		return DescriptiveStatistics.stdev(data) ** 2
 
 	@staticmethod
 	def quartiles(data):
