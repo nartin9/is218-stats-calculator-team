@@ -42,3 +42,7 @@ class TestCases(unittest.TestCase):
 	def test_quartiles_even(self):
 		data = [9, 8, 2, 5, 2, 1, 12, 15]
 		self.assertEqual([2, 6.5, 10.5], DescriptiveStatistics.quartiles(data))
+
+	def test_skewness(self):
+		data = [22, 56, 12, 32, 65, 15]
+		self.assertAlmostEqual(0.90585259, DescriptiveStatistics.skewness(data))
