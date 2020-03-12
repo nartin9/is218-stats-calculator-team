@@ -31,6 +31,10 @@ class TestCases(unittest.TestCase):
 		data = [22, 56, 12, 32, 65, 15]
 		self.assertAlmostEqual(22.0786473, DescriptiveStatistics.stdev(data))
 
+	def test_variance(self):
+		data = [22, 56, 12, 32, 65, 15]
+		self.assertAlmostEqual(487.46666666, DescriptiveStatistics.variance(data))
+
 	def test_quartiles_odd(self):
 		data = [9, 8, 2, 5, 2, 1, 12]
 		self.assertEqual([2, 5, 9], DescriptiveStatistics.quartiles(data))

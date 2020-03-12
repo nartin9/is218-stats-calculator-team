@@ -49,6 +49,9 @@ class DescriptiveStatistics:
 
 		return math.sqrt(total / (len(data) - 1))
 
+	def variance(data):
+		return DescriptiveStatistics.stdev(data) ** 2
+
 	@staticmethod
 	def quartiles(data):
 		sortedData = data[:]
