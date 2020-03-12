@@ -11,12 +11,7 @@ class DescriptiveStatistics:
 		sortedData = data[:]
 		sortedData.sort()
 
-		mid = len(sortedData) // 2
-
-		if len(sortedData) & 1 == 1:
-			return sortedData[mid]
-
-		return (sortedData[mid - 1] + sortedData[mid]) / 2
+		return DescriptiveStatistics._median(sortedData)["median"]
 
 	@staticmethod
 	def mode(data):
