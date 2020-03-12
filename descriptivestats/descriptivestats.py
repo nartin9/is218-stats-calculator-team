@@ -49,10 +49,45 @@ class DescriptiveStatistics:
 
 		return math.sqrt(total / (len(data) - 1))
 
+	"""population standard deviation"""
+	@staticmethod
+	def pstdev(data):
+		mean = DescriptiveStatistics.mean(data)
+		total = 0
+
+		for d in data:
+			total += (d - mean) ** 2
+
+		return math.sqrt(total / len(data))
+
 	"""sample variance"""
 	@staticmethod
 	def variance(data):
 		return DescriptiveStatistics.stdev(data) ** 2
+
+	"""sample covariance"""
+	@staticmethod
+	def covariance(data1, data2):
+		mean1 = DescriptiveStatistics.mean(data1)
+		mean2 = DescriptiveStatistics.mean(data2)
+
+		total = 0
+		for x, y in zip(data1, data2):
+			total += (x - mean1) * (y - mean2)
+
+		return total / (len(data1) - 1)
+
+	"""population covariance"""
+	@staticmethod
+	def pcovariance(data1, data2):
+		mean1 = DescriptiveStatistics.mean(data1)
+		mean2 = DescriptiveStatistics.mean(data2)
+
+		total = 0
+		for x, y in zip(data1, data2):
+			total += (x - mean1) * (y - mean2)
+
+		return total / len(data1)
 
 	@staticmethod
 	def quartiles(data):
@@ -82,6 +117,14 @@ class DescriptiveStatistics:
 			absdiff.append(abs(d - mean))
 
 		return DescriptiveStatistics.mean(absdiff)
+
+	@staticmethod
+	def sampleCorrelation(data1, data2):
+		return DescriptiveStatistics.covariance(data1, data2) / (DescriptiveStatistics.stdev(data1) * DescriptiveStatistics.stdev(data2))
+
+	@staticmethod
+	def populationCorrelation(data1, data2):
+		return DescriptiveStatistics.pcovariance(data1, data2) / (DescriptiveStatistics.pstdev(data1) * DescriptiveStatistics.pstdev(data2))
 
 	"""assumes data is already sorted"""
 	@staticmethod
