@@ -2,22 +2,18 @@ import unittest
 
 from descriptivestats.descriptivestats import DescriptiveStatistics
 
+from randomgenerator.randomdata import RandomData
+
 
 class TestCases(unittest.TestCase):
 	def setUp(self):
-		pass
+		self.testdata = RandomData(12345).list(0, 1000.0, 20)
 
 	def test_mean(self):
-		data = [3, 2, 6, 1, 8]
-		self.assertEqual(4, DescriptiveStatistics.mean(data))
+		self.assertAlmostEqual(406.71759600, DescriptiveStatistics.mean(self.testdata))
 
-	def test_median_odd(self):
-		data = [3, 2, 6, 1, 8]
-		self.assertEqual(3, DescriptiveStatistics.median(data))
-
-	def test_median_even(self):
-		data = [3, 2, 6, 1, 8, 4]
-		self.assertEqual(3.5, DescriptiveStatistics.median(data))
+	def test_median(self):
+		self.assertAlmostEqual(390.26554121, DescriptiveStatistics.median(self.testdata))
 
 	def test_mode_single(self):
 		data = [1, 7, 4, 7, 2, 8]
@@ -28,16 +24,13 @@ class TestCases(unittest.TestCase):
 		self.assertEqual([4, 7], DescriptiveStatistics.mode(data))
 
 	def test_stdev(self):
-		data = [22, 56, 12, 32, 65, 15]
-		self.assertAlmostEqual(22.0786473, DescriptiveStatistics.stdev(data))
+		self.assertAlmostEqual(277.78211542, DescriptiveStatistics.stdev(self.testdata))
 
 	def test_pstdev(self):
-		data = [22, 56, 12, 32, 65, 15]
-		self.assertAlmostEqual(20.15495527, DescriptiveStatistics.pstdev(data))
+		self.assertAlmostEqual(270.74851517, DescriptiveStatistics.pstdev(self.testdata))
 
 	def test_variance(self):
-		data = [22, 56, 12, 32, 65, 15]
-		self.assertAlmostEqual(487.46666666, DescriptiveStatistics.variance(data))
+		self.assertAlmostEqual(77162.90365125, DescriptiveStatistics.variance(self.testdata))
 
 	def test_covariance(self):
 		data1 = [14.2, 16.4, 11.9, 15.2, 18.5]
@@ -51,17 +44,11 @@ class TestCases(unittest.TestCase):
 
 		self.assertEqual(169.156, DescriptiveStatistics.pcovariance(data1, data2))
 
-	def test_quartiles_odd(self):
-		data = [9, 8, 2, 5, 2, 1, 12]
-		self.assertEqual([2, 5, 9], DescriptiveStatistics.quartiles(data))
-
-	def test_quartiles_even(self):
-		data = [9, 8, 2, 5, 2, 1, 12, 15]
-		self.assertEqual([2, 6.5, 10.5], DescriptiveStatistics.quartiles(data))
+	def test_quartiles(self):
+		self.assertEqual([168.01569232654998, 390.26554121388835, 557.6497868225864], DescriptiveStatistics.quartiles(self.testdata))
 
 	def test_skewness(self):
-		data = [22, 56, 12, 32, 65, 15]
-		self.assertAlmostEqual(0.90585259, DescriptiveStatistics.skewness(data))
+		self.assertAlmostEqual(0.17767941, DescriptiveStatistics.skewness(self.testdata))
 
 	def test_zscore(self):
 		value = 1100
@@ -70,8 +57,7 @@ class TestCases(unittest.TestCase):
 		self.assertAlmostEqual(0.35406698, DescriptiveStatistics.zscore(value, mean, stdev))
 
 	def test_meanDeviation(self):
-		data = [3, 2, 6, 1, 8]
-		self.assertEqual(2.4, DescriptiveStatistics.meanDeviation(data))
+		self.assertAlmostEqual(214.16539738, DescriptiveStatistics.meanDeviation(self.testdata))
 
 	def test_sample_correlation(self):
 		data1 = [14.2, 16.4, 11.9, 15.2, 18.5]
