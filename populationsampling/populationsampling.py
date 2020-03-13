@@ -19,7 +19,7 @@ class PopulationSampling:
 
 		for i in range(n):
 			r = random.randrange(0, len(data))
-			sample.append(r)
+			sample.append(data[r])
 
 			#without replacement
 			data = data[:r] + data[r + 1:]
