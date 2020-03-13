@@ -9,8 +9,8 @@ from descriptivestats.descriptivestats import DescriptiveStatistics
 class PopulationSampling:
 	def __init__(self):
 		pass
-
-	@staticmethod
+	
+	@staticmethod # data is a list  n is the number of samples you want to take
 	def simpleRandomSampling(data, n):
 		if len(data) == 0:
 			raise Exception("list is empty")
@@ -26,7 +26,7 @@ class PopulationSampling:
 
 		return sample
 
-	@staticmethod
+	@staticmethod # data is a list  n is the number of samples you want to take
 	def systematicSampling(data, n):
 		if len(data) == 0:
 			raise Exception("list is empty")
@@ -46,7 +46,7 @@ class PopulationSampling:
 
 		return sample
 
-	@staticmethod
+	@staticmethod # data is a list  
 	def confidenceInterval(data, confidence):
 		if len(data) == 0:
 			raise Exception("list is empty")
